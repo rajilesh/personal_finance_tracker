@@ -91,3 +91,29 @@ table td{
     margin-top:20px;
     display: block;
 }
+@media screen and (max-width: 800px){
+    form, table{
+        width: 80%;
+        /* display: flex; */
+        flex-direction: column;
+        overflow: auto;
+        font-size: 12px;
+    }
+
+#add-finances{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    box-sizing: border-box;
+}
+.progress_bar_statitics{
+    width: 90%;
+}
+.progress-bar{
+    width: 100%;
+}
+.finances-table_wrap{
+    overflow: auto;
+    padding: 1em;
+}
+}

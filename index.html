@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Personal Finance Tracker</title>
+    <!-- add responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link to css -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -30,6 +32,7 @@
         <button type="submit">Add Expense</button>
     </form>
 
+    <div class="finances-table_wrap">
     <!-- create a table -->
     <table id="finances-table">
         <!-- create a table heading with type, title, amount and date -->
@@ -47,6 +50,7 @@
         </tbody>
 
     </table>
+</div>
 
     <!-- add a progress bar for the expenses -->
     <div id="expenses-progress" class="progress_bar_statitics">
