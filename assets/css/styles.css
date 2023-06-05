@@ -68,6 +68,7 @@ table td{
     border-radius: 0.3em;
     width: 0;
     transition: width 0.5s ease-in-out;
+    max-width: 100%;
 }
 .progress-bar span{
     color: #FFF;
