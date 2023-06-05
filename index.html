@@ -1,0 +1,66 @@
+<!-- create an html page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Finance Tracker</title>
+    <!-- link to css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- create a form with input title -->
+    <form id="add-finances">
+        <!-- add a title for the form -->
+        <h2>Add your transactions</h2>
+        <!-- add a type with name type and values expense and income -->
+        <select name="type" required>
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+        </select>
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="number" name="amount" placeholder="Amount" required>
+        <input type="date" name="date" placeholder="Date" required>
+        <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- create a table -->
+    <table id="finances-table">
+        <!-- create a table heading with type, title, amount and date -->
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <!-- create a table body with id "finances-table-body" -->
+        <tbody id="finances-table-body">
+        </tbody>
+
+    </table>
+
+    <!-- add a progress bar for the expenses -->
+    <div id="expenses-progress" class="progress_bar_statitics">
+        <h2>Expenses</h2>
+        <div id="expenses-progress-bar" class="progress-bar">
+            <div id="expenses-progress-bar-fill">
+                <span id="expenses-progress-bar-label"></span>
+            </div>
+        </div>
+    </div>
+    <!-- add a progress bar for the incomes -->
+    <div id="incomes-progress" class="progress_bar_statitics">
+        <h2>Incomes</h2>
+        <div id="incomes-progress-bar" class="progress-bar">
+            <div id="incomes-progress-bar-fill">
+                <span id="incomes-progress-bar-label"></span>
+            </div>
+        </div>
+
+</body>
+<!-- link to js -->
+<script src="assets/js/scripts.js"></script>
+</html>
