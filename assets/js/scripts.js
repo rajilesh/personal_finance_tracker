@@ -88,7 +88,8 @@ function deleteFinance(id) {
         return finance.id !== id;
     });
     localStorage.setItem('finances', JSON.stringify(filteredFinances));
-    window.location.href = 'index.html';
+    
+    render_finances();
 }
 
 // function to save the edited finance
