@@ -73,8 +73,8 @@ expenseProgressBar.style.width = expensePercentage + '%';
 // set the progress bar text
 let incomeProgressBarText = document.getElementById('incomes-progress-bar-label');
 let expenseProgressBarText = document.getElementById('expenses-progress-bar-label');
-incomeProgressBarText.innerHTML = incomePercentage.toFixed(2) + '%';
-expenseProgressBarText.innerHTML = expensePercentage.toFixed(2) + '%';
+incomeProgressBarText.innerHTML = incomePercentage ? incomePercentage.toFixed(2) : 0 + '%';
+expenseProgressBarText.innerHTML = expensePercentage ? expensePercentage.toFixed(2) : 0 + '%';
 handle_dropdown();
 };
 
