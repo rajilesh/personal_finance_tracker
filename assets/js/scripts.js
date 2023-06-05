@@ -22,10 +22,28 @@ addFinancesForm.addEventListener('submit', function (e) {
 
 function render_finances() {
 
+    // set date filed value todays date
+    let dateField = document.getElementById('add-finances').querySelector('[name="date"]');
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1; // January is 0
+    let yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+    dateField.value = yyyy + '-' + mm + '-' + dd;
+
+
 // on page load get the data from local storage and display it in the table
 let finances = JSON.parse(localStorage.getItem('finances')) || [];
 let financesTable = document.getElementById('finances-table');
 let financesTableBody = document.getElementById('finances-table-body');
+
+
 // reset the table body
 financesTableBody.innerHTML = '';
 document.getElementById('total_income') ? document.getElementById('total_income').remove() : '';
@@ -61,8 +79,8 @@ financesTable.innerHTML += `<tr id="total_balance"> <td colspan="5">Total Balanc
 
 
 // get the percentage of income and expense
-let incomePercentage = (totalIncome / (totalIncome + totalExpense)) * 100;
-let expensePercentage = (totalExpense / (totalIncome + totalExpense)) * 100;
+let incomePercentage = totalIncome > 0 ? (totalIncome / (totalIncome)) * 100 : 0;
+let expensePercentage = totalIncome > 0 ? (totalExpense / (totalIncome)) * 100 : 0;
 
 // set the progress bar width according to the percentage
 let incomeProgressBar = document.getElementById('incomes-progress-bar-fill');
@@ -73,8 +91,8 @@ expenseProgressBar.style.width = expensePercentage + '%';
 // set the progress bar text
 let incomeProgressBarText = document.getElementById('incomes-progress-bar-label');
 let expenseProgressBarText = document.getElementById('expenses-progress-bar-label');
-incomeProgressBarText.innerHTML = incomePercentage ? incomePercentage.toFixed(2) : 0 + '%';
-expenseProgressBarText.innerHTML = expensePercentage ? expensePercentage.toFixed(2) : 0 + '%';
+incomeProgressBarText.innerHTML = (incomePercentage ? incomePercentage.toFixed(2) : 0) + '%';
+expenseProgressBarText.innerHTML = (expensePercentage ? expensePercentage.toFixed(2) : 0) + '%';
 handle_dropdown();
 };
 
